@@ -33,3 +33,13 @@ Send Message SMS
 `msg.input` = `SEND_SMS`
 
 `msg.payload` = {"number":"01741234567","message":"Nodered Test SMS"}
+
+
+---
+
+
+![Logo](https://raw.githubusercontent.com/Matten-Matten/SIM800-NodeRed/main/SIM800%20view.png)
+
+![Logo](https://raw.githubusercontent.com/Matten-Matten/SIM800-NodeRed/main/SIM800%20config.png)
+
+![Logo](https://raw.githubusercontent.com/Matten-Matten/SIM800-NodeRed/main/SIM800%20GSM%20Modul-webif.png)
