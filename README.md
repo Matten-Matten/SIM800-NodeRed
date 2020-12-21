@@ -3,9 +3,7 @@ Subflow to send and receive SMS via Serialport &amp; SIM800 Modul.
 
 ![Logo](https://simcom.ee/images/simcom_logo.png)
 
-# SIM800 GSM Modul Subflow
 
----
 ## INPUT:
 
 Input from Serial Modul
