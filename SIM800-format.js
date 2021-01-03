@@ -195,6 +195,54 @@
             {
                 "name": "",
                 "type": "str",
+                "value": "Webif",
+                "ui": {
+                    "icon": "font-awesome/fa-info-circle",
+                    "label": {
+                        "en-US": "Webinterface Settings: System"
+                    },
+                    "type": "none"
+                }
+            },
+            {
+                "name": "SYSTEM",
+                "type": "str",
+                "value": "0",
+                "ui": {
+                    "icon": "font-awesome/fa-hdd-o",
+                    "label": {
+                        "en-US": "System"
+                    },
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "Nodered"
+                                },
+                                "v": "0"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "RedMatic"
+                                },
+                                "v": "1"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "",
+                "type": "str",
+                "value": "leer",
+                "ui": {
+                    "type": "none"
+                }
+            },
+            {
+                "name": "",
+                "type": "str",
                 "value": "text",
                 "ui": {
                     "icon": "font-awesome/fa-info-circle",
@@ -251,14 +299,6 @@
                         "en-US": "Auto Start"
                     },
                     "type": "checkbox"
-                }
-            },
-            {
-                "name": "",
-                "type": "str",
-                "value": "leer",
-                "ui": {
-                    "type": "none"
                 }
             },
             {
@@ -5610,7 +5650,7 @@
         "y": 3940,
         "wires": [
             [
-                "cc25047.2b8b7f8"
+                "e001b170.84f7f"
             ]
         ]
     },
@@ -5635,12 +5675,14 @@
         "id": "cc25047.2b8b7f8",
         "type": "function",
         "z": "c5823db2.4ff16",
-        "name": "msg.url = \"/SIM800\";",
-        "func": "msg.url = \"SIM800\";\nreturn msg;\n",
+        "name": "msg.url = \"addons/red/SIM800\";",
+        "func": "msg.url = \"addons/red/SIM800\";\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 460,
-        "y": 3940,
+        "initialize": "",
+        "finalize": "",
+        "x": 650,
+        "y": 3900,
         "wires": [
             [
                 "2aa8fb3.a165504"
@@ -5657,7 +5699,7 @@
         "format": "javascript",
         "syntax": "plain",
         "template": "$(document).ready(function(e) {\n    \n    $(\"form[ajax=true]\").submit(function(e) {\n        \n        e.preventDefault();\n        \n        var form_data = $(this).serialize();\n        var form_url = $(this).attr(\"action\");\n        var form_method = $(this).attr(\"method\").toUpperCase();\n        \n        $(\"#loadingimg\").show();\n        \n        $.ajax({\n            url: form_url, \n            type: form_method,      \n            data: form_data,     \n            cache: false,\n            success: function(returnhtml){                          \n                $(\"#result\").html(returnhtml); \n                $(\"#loadingimg\").hide();                    \n            }           \n        });    \n        \n    });\n    \n});",
-        "x": 710,
+        "x": 890,
         "y": 3940,
         "wires": [
             [
@@ -5672,7 +5714,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1170,
+        "x": 1350,
         "y": 3940,
         "wires": []
     },
@@ -5686,7 +5728,7 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n  <head>\n    <title>TC35 GSM Modul</title>\n    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\">\n    <meta charset=\"utf-8\">\n    <script src=\"http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js\"></script>\n    <style>{{{payload.style}}}</style>\n  </head>\n\n<div>\n  <h2>SMS senden</h2>\n  <form method=\"post\" action=\"/{{url}}\" ajax=\"true\">\n    <label for=\"number\">Nummer</label>\n    <input type=\"text\" id=\"number\" name=\"number\">\n    \n    <label for=\"message\">SMS Text</label>\n    <input type=\"text\" id=\"message\" name=\"message\">\n  \n    <input type=\"submit\" value=\"senden\">\n  </form>\n  <span id=\"result\"></span>\n</div>\n\n</body>\n</html>\n<script>{{{payload.script}}}</script>",
-        "x": 990,
+        "x": 1170,
         "y": 3940,
         "wires": [
             [
@@ -5781,7 +5823,7 @@
         "format": "html",
         "syntax": "mustache",
         "template": "input[type=text], select {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    border-radius: 4px;\n    box-sizing: border-box;\n}\n\ninput[type=submit] {\n    width: 100%;\n    background-color: #285E8A;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\ninput[type=submit]:hover {\n    background-color: #1990C7;\n}\n\ndiv {\n    border: 1px solid #ccc;\n    border-radius: 10px;\n    background-color: #f2f2f2;\n    padding: 20px;\n}\n\nh2 {\n    color: #285E8A;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    text-align: center;\n}",
-        "x": 870,
+        "x": 1050,
         "y": 3940,
         "wires": [
             [
@@ -7881,11 +7923,67 @@
         ]
     },
     {
+        "id": "e001b170.84f7f",
+        "type": "switch",
+        "z": "c5823db2.4ff16",
+        "name": "SYSTEM",
+        "property": "SYSTEM",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 420,
+        "y": 3940,
+        "wires": [
+            [
+                "cc25047.2b8b7f8"
+            ],
+            [
+                "eb3d6df9.bd432"
+            ]
+        ]
+    },
+    {
+        "id": "eb3d6df9.bd432",
+        "type": "function",
+        "z": "c5823db2.4ff16",
+        "name": "msg.url = \"/SIM800\";",
+        "func": "msg.url = \"SIM800\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 680,
+        "y": 3940,
+        "wires": [
+            [
+                "2aa8fb3.a165504"
+            ]
+        ]
+    },
+    {
         "id": "92117134.d5efb",
         "type": "subflow:c5823db2.4ff16",
         "z": "3ccff976.212636",
         "name": "",
         "env": [
+            {
+                "name": "AUTOSTART",
+                "type": "bool",
+                "value": "true"
+            },
             {
                 "name": "SERIAL",
                 "value": "/dev/USB0",
