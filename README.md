@@ -4,6 +4,7 @@ Subflow to send and receive SMS via Serialport &amp; SIM800 Modul.
 ![Logo](https://simcom.ee/images/simcom_logo.png)
 
 ---
+![Logo](https://homematic-forum.de/forum/styles/prosilver/theme/images/homematic-logo.png)
 
 Forum: https://homematic-forum.de/forum/viewtopic.php?f=77&t=63797&p=628671#p628671
 
