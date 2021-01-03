@@ -3,7 +3,7 @@
         "id": "c5823db2.4ff16",
         "type": "subflow",
         "name": "SIM800 GSM Modul",
-        "info": "![Logo](https://simcom.ee/images/simcom_logo.png)\n\n# SIM800 GSM Modul Subflow\n\n---\n## INPUT:\n\nInput from Serial Modul\n\n`msg.input` = `SERIAL_INPUT`\n\n`msg.payload` = payload from Serial Modul\n\n---\nStart Connection to GSM Modul\n\n`msg.input` = `START`\n\n---\nStop Connection\n\n`msg.input` = `STOP`\n\n---\nReset SIM800\n\n`msg.input` = `RESET`\n\n---\nSend Message SMS\n\n`msg.input` = `SEND_SMS`\n\n`msg.payload` = {\"number\":\"01741234567\",\"message\":\"Nodered Test SMS\"}\n\n---\n## OUTPUT\n\n 1. to Serial Modul\n 2. Messenger_LetzterPruefStatus\n 3. Messenger_LetzteSignalstaerke\n 4. Messenger_Modus\n 5. Messenger_LetzterSendeStatus\n 6. Messenger_SMSEmfangAbsenderID\n 7. Messenger_SMSEmfangText\n 8. Messenger_Warteschlange",
+        "info": "![Logo](https://simcom.ee/images/simcom_logo.png)\n\n# SIM800 GSM Modul Subflow\n\n---\n## INPUT:\n\nInput from Serial Modul\n\n`msg.input` = `SERIAL_INPUT`\n\n`msg.payload` = payload from Serial Modul\n\n---\nStart Connection to GSM Modul\n\n`msg.input` = `START`\n\n---\nStop Connection\n\n`msg.input` = `STOP`\n\n---\nReset SIM800\n\n`msg.input` = `RESET`\n\n---\nSend Message SMS\n\n`msg.input` = `SEND_SMS`\n\n`msg.payload` = {\"number\":\"01741234567\",\"message\":\"Nodered Test SMS\"}\n\n---\n## OUTPUT\n\n 1. to Serial Modul\n 2. Letzter Pruef-Status - `0=Nicht verfügbar; Erfolgreich; 1=TC35 Initialisierung-ShellBefehl fehlgeschlagen; 2=TC35 Initialisierung fehlgeschlagen; 3=Modem nicht bereit; 4=Aktivierung erweiterte Fehlermeldungen fehlgeschlagen; 5=Umschalten SMS-Textmodus fehlgeschlagen; 6=SIM-Pin wird benötigt; 7=Setzen SIM-Pin fehlgeschlagen; 8=Provider nicht registiert; 9=Ermittlung Signalstärke fehlgeschlagen; 10=Modem Reset fehlgeschlagen; 11=SIM-Fehler`\n 3. Signalstaerke - `0=unbekannt; 1=sehr schlecht; 2=schlecht; 3=ok; 4=gut; 5=sehr gut`\n 4. Modus - `true=aktiv; false=inaktiv`\n 5. Letzter Sende Status - `0=Unbekannt; 1=SMS Erfolgreich Versand; 13=SMS NICHT Versand; 15=sende SMS`\n 6. SMS-Emfang Absender ID\n 7. SMS-Emfang Text\n",
         "category": "SMS",
         "in": [
             {
@@ -158,16 +158,6 @@
                         "port": 0
                     }
                 ]
-            },
-            {
-                "x": 1500,
-                "y": 3000,
-                "wires": [
-                    {
-                        "id": "d902d2a0.d6e2",
-                        "port": 0
-                    }
-                ]
             }
         ],
         "env": [
@@ -189,7 +179,7 @@
                 "value": "Version",
                 "ui": {
                     "label": {
-                        "en-US": "Version 1.1.0"
+                        "en-US": "Version 1.1.1"
                     },
                     "type": "none"
                 }
@@ -298,13 +288,12 @@
         ],
         "outputLabels": [
             "SERIAL OUTPUT",
-            "Messenger_LetzterPruefStatus",
-            "Messenger_LetzteSignalstaerke",
-            "Messenger_Modus",
-            "Messenger_LetzterSendeStatus",
-            "Messenger_SMSEmfangAbsenderID",
-            "Messenger_SMSEmfangText",
-            "Messenger_Warteschlange"
+            "Letzter Pruef-Status",
+            "Signalstaerke",
+            "Modus",
+            "Letzter Sende Status",
+            "SMS-Emfang Absender ID",
+            "SMS-Emfang Text"
         ],
         "icon": "font-awesome/fa-signal",
         "status": {
@@ -743,9 +732,7 @@
             [
                 "7598086e.c6ba78"
             ],
-            [
-                "d902d2a0.d6e2"
-            ],
+            [],
             [
                 "76758d7e.4bacc4"
             ],
@@ -4250,31 +4237,6 @@
         "reg": false,
         "x": 1370,
         "y": 2660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d902d2a0.d6e2",
-        "type": "change",
-        "z": "c5823db2.4ff16",
-        "name": "leer",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 410,
-        "y": 3000,
         "wires": [
             []
         ]
@@ -7931,7 +7893,7 @@
             }
         ],
         "x": 660,
-        "y": 400,
+        "y": 360,
         "wires": [
             [
                 "8b22b3f6.ad9c"
@@ -7940,7 +7902,7 @@
                 "5af87e3c.08b4a"
             ],
             [
-                "52b6d97d.89e888"
+                "6f581791.1e9528"
             ],
             [
                 "d8ff3d30.176ea"
@@ -7953,9 +7915,6 @@
             ],
             [
                 "94421635.c88188"
-            ],
-            [
-                "de557238.29bbe"
             ]
         ]
     },
@@ -8148,14 +8107,16 @@
         "id": "52b6d97d.89e888",
         "type": "debug",
         "z": "3ccff976.212636",
-        "name": "Messenger_LetzteSignalstaerke",
+        "name": "Signalstaerke",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1050,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
         "y": 240,
         "wires": []
     },
@@ -8163,14 +8124,16 @@
         "id": "15ff5276.2d336e",
         "type": "debug",
         "z": "3ccff976.212636",
-        "name": "Messenger_SMSEmfangAbsenderID",
+        "name": "SMS-Emfang Absender ID",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1070,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
         "y": 360,
         "wires": []
     },
@@ -8178,14 +8141,16 @@
         "id": "5af87e3c.08b4a",
         "type": "debug",
         "z": "3ccff976.212636",
-        "name": "Messenger_LetzterPruefStatus",
+        "name": "Letzter Pruef Status",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1050,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
         "y": 200,
         "wires": []
     },
@@ -8193,14 +8158,16 @@
         "id": "d8ff3d30.176ea",
         "type": "debug",
         "z": "3ccff976.212636",
-        "name": "Messenger_Modus",
-        "active": false,
+        "name": "Modus",
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1010,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
         "y": 280,
         "wires": []
     },
@@ -8208,14 +8175,16 @@
         "id": "56130da8.d20c04",
         "type": "debug",
         "z": "3ccff976.212636",
-        "name": "Messenger_LetzterSendeStatus",
+        "name": "Letzter Sende Status",
         "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1050,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
         "y": 320,
         "wires": []
     },
@@ -8223,30 +8192,17 @@
         "id": "94421635.c88188",
         "type": "debug",
         "z": "3ccff976.212636",
-        "name": "Messenger_SMSEmfangText",
+        "name": "SMS-Emfang Text",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1040,
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
         "y": 400,
-        "wires": []
-    },
-    {
-        "id": "de557238.29bbe",
-        "type": "debug",
-        "z": "3ccff976.212636",
-        "name": "Messenger_Warteschlange",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 1040,
-        "y": 440,
         "wires": []
     },
     {
@@ -8330,6 +8286,24 @@
         "x": 980,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "6f581791.1e9528",
+        "type": "rbe",
+        "z": "3ccff976.212636",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 970,
+        "y": 240,
+        "wires": [
+            [
+                "52b6d97d.89e888"
+            ]
+        ]
     },
     {
         "id": "cda9305.76a21d",
