@@ -3,7 +3,7 @@
         "id": "c5823db2.4ff16",
         "type": "subflow",
         "name": "SIM800 GSM Modul",
-        "info": "![Logo](https://simcom.ee/images/simcom_logo.png)\n\n# SIM800 GSM Modul Subflow\n\n---\n## INPUT:\n\nInput from Serial Modul\n\n`msg.input` = `SERIAL_INPUT`\n\n`msg.payload` = payload from Serial Modul\n\n---\nStart Connection to GSM Modul\n\n`msg.input` = `START`\n\n---\nStop Connection\n\n`msg.input` = `STOP`\n\n---\nReset SIM800\n\n`msg.input` = `RESET`\n\n---\nSend Message SMS\n\n`msg.input` = `SEND_SMS`\n\n`msg.payload` = {\"number\":\"01741234567\",\"message\":\"Nodered Test SMS\"}\n\n---\n## OUTPUT\n\n 1. to Serial Modul\n 2. Letzter Pruef-Status - `0=Nicht verfügbar; Erfolgreich; 1=TC35 Initialisierung-ShellBefehl fehlgeschlagen; 2=TC35 Initialisierung fehlgeschlagen; 3=Modem nicht bereit; 4=Aktivierung erweiterte Fehlermeldungen fehlgeschlagen; 5=Umschalten SMS-Textmodus fehlgeschlagen; 6=SIM-Pin wird benötigt; 7=Setzen SIM-Pin fehlgeschlagen; 8=Provider nicht registiert; 9=Ermittlung Signalstärke fehlgeschlagen; 10=Modem Reset fehlgeschlagen; 11=SIM-Fehler`\n 3. Signalstaerke - `0=unbekannt; 1=sehr schlecht; 2=schlecht; 3=ok; 4=gut; 5=sehr gut`\n 4. Modus - `true=aktiv; false=inaktiv`\n 5. Letzter Sende Status - `0=Unbekannt; 1=SMS Erfolgreich Versand; 13=SMS NICHT Versand; 15=sende SMS`\n 6. SMS-Emfang Absender ID\n 7. SMS-Emfang Text\n\n\n---\n\n## by [Matten Matten](https://github.com/Matten-Matten/SIM800-NodeRed/blob/main/README.md)\n",
+        "info": "![Logo](https://simcom.ee/images/simcom_logo.png)\n\n# SIM800 GSM Modul Subflow\n\n---\n## INPUT:\n\nInput from Serial Modul\n\n`msg.input` = `SERIAL_INPUT`\n\n`msg.payload` = payload from Serial Modul\n\n---\nStart Connection to GSM Modul\n\n`msg.input` = `START`\n\n---\nStop Connection\n\n`msg.input` = `STOP`\n\n---\nReset SIM800\n\n`msg.input` = `RESET`\n\n---\nread Signal quality manually\n\n`msg.input` = `SIGNAL`\n\n---\nSend Message SMS\n\n`msg.input` = `SEND_SMS`\n\n`msg.payload` = {\"number\":\"01741234567\",\"message\":\"Nodered Test SMS\"}\n\n---\n## OUTPUT\n\n 1. to Serial Modul\n 2. Letzter Pruef-Status - `0=Nicht verfügbar; Erfolgreich; 1=TC35 Initialisierung-ShellBefehl fehlgeschlagen; 2=TC35 Initialisierung fehlgeschlagen; 3=Modem nicht bereit; 4=Aktivierung erweiterte Fehlermeldungen fehlgeschlagen; 5=Umschalten SMS-Textmodus fehlgeschlagen; 6=SIM-Pin wird benötigt; 7=Setzen SIM-Pin fehlgeschlagen; 8=Provider nicht registiert; 9=Ermittlung Signalstärke fehlgeschlagen; 10=Modem Reset fehlgeschlagen; 11=SIM-Fehler`\n 3. Signalstaerke - `0=unbekannt; 1=sehr schlecht; 2=schlecht; 3=ok; 4=gut; 5=sehr gut`\n 4. Modus - `true=aktiv; false=inaktiv`\n 5. Letzter Sende Status - `0=Unbekannt; 1=SMS Erfolgreich Versand; 13=SMS NICHT Versand; 15=sende SMS`\n 6. SMS-Emfang Absender ID\n 7. SMS-Emfang Text\n\n\n---\n\n## by [Matten Matten](https://github.com/Matten-Matten/SIM800-NodeRed/blob/main/README.md)\n",
         "category": "SMS",
         "in": [
             {
@@ -5748,7 +5748,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<html>\n  <head>\n    <title>TC35 GSM Modul</title>\n    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\">\n    <meta charset=\"utf-8\">\n    <script src=\"http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js\"></script>\n    <style>{{{payload.style}}}</style>\n  </head>\n\n<div>\n  <h2>SMS senden</h2>\n  <form method=\"post\" action=\"/{{url}}\" ajax=\"true\">\n    <label for=\"number\">Nummer</label>\n    <input type=\"text\" id=\"number\" name=\"number\">\n    \n    <label for=\"message\">SMS Text</label>\n    <input type=\"text\" id=\"message\" name=\"message\">\n  \n    <input type=\"submit\" value=\"senden\">\n  </form>\n  <span id=\"result\"></span>\n</div>\n\n</body>\n</html>\n<script>{{{payload.script}}}</script>",
+        "template": "<html>\n  <head>\n    <title>SIM800 GSM Modul</title>\n    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\">\n    <meta charset=\"utf-8\">\n    <script src=\"http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js\"></script>\n    <style>{{{payload.style}}}</style>\n  </head>\n\n<div>\n  <h2>SMS senden</h2>\n  <form method=\"post\" action=\"/{{url}}\" ajax=\"true\">\n    <label for=\"number\">Nummer</label>\n    <input type=\"text\" id=\"number\" name=\"number\">\n    \n    <label for=\"message\">SMS Text</label>\n    <input type=\"text\" id=\"message\" name=\"message\">\n  \n    <input type=\"submit\" value=\"senden\">\n  </form>\n  <span id=\"result\"></span>\n</div>\n\n</body>\n</html>\n<script>{{{payload.script}}}</script>",
         "x": 1190,
         "y": 4700,
         "wires": [
@@ -7377,7 +7377,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<html>\n    <head>\n       <h1>TC35 API</h1> \n    </head>\n    <body>\n        <h1>error unknown API request!</h1>\n    </body>\n</html>",
+        "template": "<html>\n    <head>\n       <h1>SIM800 API</h1> \n    </head>\n    <body>\n        <h1>error unknown API request!</h1>\n    </body>\n</html>",
         "x": 730,
         "y": 4940,
         "wires": [
@@ -7395,7 +7395,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<html>\n    <head>\n        <h1>TC35 Web API</h1>\n    </head>\n    <body>\n        <h1>error wrong Value!</h1>\n    </body>\n</html>",
+        "template": "<html>\n    <head>\n        <h1>SIM800 Web API</h1>\n    </head>\n    <body>\n        <h1>error wrong Value!</h1>\n    </body>\n</html>",
         "x": 890,
         "y": 4880,
         "wires": [
@@ -7413,7 +7413,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "<html>\n    <head>\n       <h1>TC35 Web API</h1> \n    </head>\n    <body>\n        <h1>OK</h1>\n        <h1>Message send</h1>\n    </body>\n</html>",
+        "template": "<html>\n    <head>\n       <h1>SIM800 Web API</h1> \n    </head>\n    <body>\n        <h1>OK</h1>\n        <h1>Message send</h1>\n    </body>\n</html>",
         "x": 890,
         "y": 4840,
         "wires": [
@@ -8275,7 +8275,7 @@
                 "5af87e3c.08b4a"
             ],
             [
-                "52b6d97d.89e888"
+                "d9c20bd3.c4e728"
             ],
             [
                 "d8ff3d30.176ea"
@@ -8311,7 +8311,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "92117134.d5efb"
@@ -8337,8 +8337,8 @@
         "topic": "",
         "payload": "START",
         "payloadType": "str",
-        "x": 270,
-        "y": 220,
+        "x": 210,
+        "y": 200,
         "wires": [
             [
                 "6f6a254.14482dc"
@@ -8368,7 +8368,7 @@
         "payload": "{\"number\":\"0174123456789\",\"message\":\"Nodered\\nSMS Test Text\\nvom SIM800 Modul\"}",
         "payloadType": "json",
         "x": 240,
-        "y": 340,
+        "y": 280,
         "wires": [
             [
                 "9130e56d.bdb868"
@@ -8386,8 +8386,8 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "str",
-        "x": 270,
-        "y": 280,
+        "x": 210,
+        "y": 240,
         "wires": [
             [
                 "7de805d4.de2a4c"
@@ -8415,7 +8415,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 220,
+        "y": 200,
         "wires": [
             [
                 "92117134.d5efb"
@@ -8442,7 +8442,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 340,
+        "y": 280,
         "wires": [
             [
                 "92117134.d5efb"
@@ -8469,7 +8469,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 280,
+        "y": 240,
         "wires": [
             [
                 "92117134.d5efb"
@@ -8489,7 +8489,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1000,
+        "x": 1120,
         "y": 240,
         "wires": []
     },
@@ -8599,8 +8599,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 270,
-        "y": 400,
+        "x": 210,
+        "y": 320,
         "wires": [
             [
                 "4ed62353.a246dc"
@@ -8628,7 +8628,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 400,
+        "y": 320,
         "wires": [
             [
                 "92117134.d5efb"
@@ -8642,7 +8642,7 @@
         "name": "Serial-In",
         "serial": "cda9305.76a21d",
         "x": 260,
-        "y": 160,
+        "y": 140,
         "wires": [
             [
                 "6560e1f7.f1382",
@@ -8681,8 +8681,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "str",
-        "x": 260,
-        "y": 460,
+        "x": 220,
+        "y": 360,
         "wires": [
             [
                 "4611663e.a1e318"
@@ -8710,10 +8710,28 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 460,
+        "y": 360,
         "wires": [
             [
                 "92117134.d5efb"
+            ]
+        ]
+    },
+    {
+        "id": "d9c20bd3.c4e728",
+        "type": "rbe",
+        "z": "3ccff976.212636",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 970,
+        "y": 240,
+        "wires": [
+            [
+                "52b6d97d.89e888"
             ]
         ]
     },
