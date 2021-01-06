@@ -38,6 +38,10 @@ Forum: https://homematic-forum.de/forum/viewtopic.php?f=77&t=63797&p=628671#p628
 
 `msg.input` = `RESET`
 
+### read Signal quality manually
+
+`msg.input` = `SIGNAL`
+
 
 ### Send Message SMS
 
