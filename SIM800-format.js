@@ -3,12 +3,12 @@
         "id": "c5823db2.4ff16",
         "type": "subflow",
         "name": "SIM800 GSM Modul",
-        "info": "![Logo](https://simcom.ee/images/simcom_logo.png)\n\n# SIM800 GSM Modul Subflow\n\n---\n## INPUT:\n\nInput from Serial Modul\n\n`msg.input` = `SERIAL_INPUT`\n\n`msg.payload` = payload from Serial Modul\n\n---\nStart Connection to GSM Modul\n\n`msg.input` = `START`\n\n---\nStop Connection\n\n`msg.input` = `STOP`\n\n---\nReset SIM800\n\n`msg.input` = `RESET`\n\n---\nSend Message SMS\n\n`msg.input` = `SEND_SMS`\n\n`msg.payload` = {\"number\":\"01741234567\",\"message\":\"Nodered Test SMS\"}\n\n---\n## OUTPUT\n\n 1. to Serial Modul\n 2. Letzter Pruef-Status - `0=Nicht verfügbar; Erfolgreich; 1=TC35 Initialisierung-ShellBefehl fehlgeschlagen; 2=TC35 Initialisierung fehlgeschlagen; 3=Modem nicht bereit; 4=Aktivierung erweiterte Fehlermeldungen fehlgeschlagen; 5=Umschalten SMS-Textmodus fehlgeschlagen; 6=SIM-Pin wird benötigt; 7=Setzen SIM-Pin fehlgeschlagen; 8=Provider nicht registiert; 9=Ermittlung Signalstärke fehlgeschlagen; 10=Modem Reset fehlgeschlagen; 11=SIM-Fehler`\n 3. Signalstaerke - `0=unbekannt; 1=sehr schlecht; 2=schlecht; 3=ok; 4=gut; 5=sehr gut`\n 4. Modus - `true=aktiv; false=inaktiv`\n 5. Letzter Sende Status - `0=Unbekannt; 1=SMS Erfolgreich Versand; 13=SMS NICHT Versand; 15=sende SMS`\n 6. SMS-Emfang Absender ID\n 7. SMS-Emfang Text\n",
+        "info": "![Logo](https://simcom.ee/images/simcom_logo.png)\n\n# SIM800 GSM Modul Subflow\n\n---\n## INPUT:\n\nInput from Serial Modul\n\n`msg.input` = `SERIAL_INPUT`\n\n`msg.payload` = payload from Serial Modul\n\n---\nStart Connection to GSM Modul\n\n`msg.input` = `START`\n\n---\nStop Connection\n\n`msg.input` = `STOP`\n\n---\nReset SIM800\n\n`msg.input` = `RESET`\n\n---\nSend Message SMS\n\n`msg.input` = `SEND_SMS`\n\n`msg.payload` = {\"number\":\"01741234567\",\"message\":\"Nodered Test SMS\"}\n\n---\n## OUTPUT\n\n 1. to Serial Modul\n 2. Letzter Pruef-Status - `0=Nicht verfügbar; Erfolgreich; 1=TC35 Initialisierung-ShellBefehl fehlgeschlagen; 2=TC35 Initialisierung fehlgeschlagen; 3=Modem nicht bereit; 4=Aktivierung erweiterte Fehlermeldungen fehlgeschlagen; 5=Umschalten SMS-Textmodus fehlgeschlagen; 6=SIM-Pin wird benötigt; 7=Setzen SIM-Pin fehlgeschlagen; 8=Provider nicht registiert; 9=Ermittlung Signalstärke fehlgeschlagen; 10=Modem Reset fehlgeschlagen; 11=SIM-Fehler`\n 3. Signalstaerke - `0=unbekannt; 1=sehr schlecht; 2=schlecht; 3=ok; 4=gut; 5=sehr gut`\n 4. Modus - `true=aktiv; false=inaktiv`\n 5. Letzter Sende Status - `0=Unbekannt; 1=SMS Erfolgreich Versand; 13=SMS NICHT Versand; 15=sende SMS`\n 6. SMS-Emfang Absender ID\n 7. SMS-Emfang Text\n\n\n---\n\n## by [Matten Matten](https://github.com/Matten-Matten/SIM800-NodeRed/blob/main/README.md)\n",
         "category": "SMS",
         "in": [
             {
                 "x": 380,
-                "y": 3620,
+                "y": 4240,
                 "wires": [
                     {
                         "id": "b7942615.a2aa98"
@@ -19,7 +19,7 @@
         "out": [
             {
                 "x": 380,
-                "y": 3680,
+                "y": 4300,
                 "wires": [
                     {
                         "id": "a7b72d2b.ef6f",
@@ -78,8 +78,8 @@
                 ]
             },
             {
-                "x": 1540,
-                "y": 1700,
+                "x": 1520,
+                "y": 1980,
                 "wires": [
                     {
                         "id": "5dad3b00.ba0814",
@@ -96,8 +96,8 @@
                 ]
             },
             {
-                "x": 1540,
-                "y": 1820,
+                "x": 1520,
+                "y": 2100,
                 "wires": [
                     {
                         "id": "7bbd151a.37816c",
@@ -115,7 +115,7 @@
             },
             {
                 "x": 1500,
-                "y": 2760,
+                "y": 3300,
                 "wires": [
                     {
                         "id": "1fce9bcd.1e5d44",
@@ -141,7 +141,7 @@
             },
             {
                 "x": 1500,
-                "y": 2420,
+                "y": 2860,
                 "wires": [
                     {
                         "id": "3eddb20e.c4c72e",
@@ -151,7 +151,7 @@
             },
             {
                 "x": 1500,
-                "y": 2500,
+                "y": 2940,
                 "wires": [
                     {
                         "id": "e950fd7d.63846",
@@ -179,7 +179,7 @@
                 "value": "Version",
                 "ui": {
                     "label": {
-                        "en-US": "Version 1.1.1"
+                        "en-US": "Version 1.2.0"
                     },
                     "type": "none"
                 }
@@ -338,7 +338,7 @@
         "icon": "font-awesome/fa-signal",
         "status": {
             "x": 380,
-            "y": 3740,
+            "y": 4360,
             "wires": [
                 {
                     "id": "1941ac98.e44073",
@@ -373,7 +373,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1330,
-        "y": 2580,
+        "y": 3020,
         "wires": [
             [
                 "df0e2dc7.5640a"
@@ -392,7 +392,7 @@
         "oldrc": false,
         "name": "/dev/ttyUSBx",
         "x": 1270,
-        "y": 3780,
+        "y": 4400,
         "wires": [
             [
                 "1a685548.967bbb"
@@ -415,7 +415,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1470,
-        "y": 3780,
+        "y": 4400,
         "wires": []
     },
     {
@@ -431,7 +431,7 @@
         "payload": "CMGD=1",
         "payloadType": "str",
         "x": 1070,
-        "y": 2580,
+        "y": 3020,
         "wires": [
             [
                 "19786752.8979e9"
@@ -461,7 +461,7 @@
         "repair": false,
         "outputs": 2,
         "x": 420,
-        "y": 2440,
+        "y": 2880,
         "wires": [
             [
                 "3eddb20e.c4c72e"
@@ -480,7 +480,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 610,
-        "y": 2420,
+        "y": 2860,
         "wires": [
             [
                 "4c63a73f.2f6648"
@@ -515,7 +515,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1120,
-        "y": 2400,
+        "y": 2840,
         "wires": []
     },
     {
@@ -537,7 +537,7 @@
         "repair": false,
         "outputs": 2,
         "x": 210,
-        "y": 2480,
+        "y": 2920,
         "wires": [
             [
                 "8f0a2647.d9f4d8"
@@ -556,7 +556,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 410,
-        "y": 2520,
+        "y": 2960,
         "wires": [
             [
                 "ff5bf6f5.f94d68",
@@ -576,7 +576,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1130,
-        "y": 2480,
+        "y": 2920,
         "wires": []
     },
     {
@@ -591,7 +591,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1120,
-        "y": 2540,
+        "y": 2980,
         "wires": []
     },
     {
@@ -614,7 +614,7 @@
         "to": "",
         "reg": false,
         "x": 650,
-        "y": 2540,
+        "y": 2980,
         "wires": [
             [
                 "d33d75b3.281858",
@@ -631,7 +631,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1100,
-        "y": 2620,
+        "y": 3060,
         "wires": [
             [
                 "aa8c677e.f7d7a8"
@@ -658,7 +658,7 @@
         "to": "",
         "reg": false,
         "x": 650,
-        "y": 2460,
+        "y": 2900,
         "wires": [
             []
         ]
@@ -679,7 +679,7 @@
         "repair": false,
         "outputs": 1,
         "x": 170,
-        "y": 2620,
+        "y": 3060,
         "wires": [
             [
                 "b5d302bc.94b24"
@@ -704,7 +704,7 @@
         "repair": false,
         "outputs": 1,
         "x": 220,
-        "y": 2300,
+        "y": 2740,
         "wires": [
             [
                 "36dd9e13.877942",
@@ -722,7 +722,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1100,
-        "y": 2300,
+        "y": 2740,
         "wires": [
             [
                 "4d91a8ac.de7438"
@@ -767,7 +767,7 @@
         "repair": false,
         "outputs": 5,
         "x": 210,
-        "y": 2840,
+        "y": 3380,
         "wires": [
             [
                 "7598086e.c6ba78"
@@ -796,7 +796,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1390,
-        "y": 2960,
+        "y": 3500,
         "wires": []
     },
     {
@@ -815,7 +815,7 @@
         "repair": false,
         "outputs": 1,
         "x": 410,
-        "y": 2820,
+        "y": 3360,
         "wires": [
             [
                 "c757c389.ad372",
@@ -844,7 +844,7 @@
         "to": "",
         "reg": false,
         "x": 460,
-        "y": 2760,
+        "y": 3300,
         "wires": [
             [
                 "a221f7a5.4ec738"
@@ -878,7 +878,7 @@
         "to": "",
         "reg": false,
         "x": 580,
-        "y": 2820,
+        "y": 3360,
         "wires": [
             [
                 "2f8933ac.0a51ec"
@@ -901,7 +901,7 @@
         "repair": false,
         "outputs": 1,
         "x": 410,
-        "y": 2900,
+        "y": 3440,
         "wires": [
             [
                 "e059d18d.14f94",
@@ -937,7 +937,7 @@
         "to": "",
         "reg": false,
         "x": 580,
-        "y": 2900,
+        "y": 3440,
         "wires": [
             [
                 "401aaf51.da716"
@@ -961,8 +961,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 210,
-        "y": 1720,
+        "x": 190,
+        "y": 2000,
         "wires": [
             [
                 "a0301fe1.ce7ea",
@@ -978,8 +978,8 @@
         "func": "var signal = msg.payload.split(\",\");\nsignal = parseFloat((signal[0]).replace(\"+CSQ: \", ''));\n\nif (signal < 2) {\n\tmsg.payload = 1;\n\treturn msg;\n}\nelse if (signal >= 2 && signal <=9) {\n\tmsg.payload = 2;\n\treturn msg;\n}\nelse if (signal >= 10 && signal <=14) {\n\tmsg.payload = 3;\n\treturn msg;\n}\nelse if (signal >= 15 && signal <=19) {\n\tmsg.payload = 4;\n\treturn msg;\n}\nelse if (signal >= 20) {\n\tmsg.payload = 5;\n\treturn msg;\n}\nelse if (signal === 99) {\n\tmsg.payload = 99;\n\treturn msg;\n} else {\n\tmsg.payload = 0;\n\treturn msg;\n}",
         "outputs": 1,
         "noerr": 0,
-        "x": 450,
-        "y": 1720,
+        "x": 430,
+        "y": 2000,
         "wires": [
             [
                 "5dad3b00.ba0814",
@@ -999,8 +999,8 @@
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1210,
-        "y": 1720,
+        "x": 1190,
+        "y": 2000,
         "wires": []
     },
     {
@@ -1598,7 +1598,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1110,
-        "y": 1940,
+        "y": 2300,
         "wires": [
             [
                 "7144fd0d.1e6b74"
@@ -1623,7 +1623,7 @@
         "repair": false,
         "outputs": 1,
         "x": 240,
-        "y": 1980,
+        "y": 2340,
         "wires": [
             [
                 "7b4cd02.4c4de3",
@@ -1686,7 +1686,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 460,
-        "y": 3160,
+        "y": 3680,
         "wires": [
             [
                 "e376a450.d0c1f8",
@@ -1707,7 +1707,7 @@
         "initialize": "",
         "finalize": "",
         "x": 800,
-        "y": 3240,
+        "y": 3760,
         "wires": [
             [
                 "316831c3.34802e"
@@ -1731,7 +1731,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 450,
-        "y": 3240,
+        "y": 3760,
         "wires": [
             [
                 "d90bdd2d.af85b"
@@ -1754,7 +1754,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 430,
-        "y": 3200,
+        "y": 3720,
         "wires": [
             [
                 "7162a94c.a6af18"
@@ -1770,7 +1770,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 800,
-        "y": 3200,
+        "y": 3720,
         "wires": [
             [
                 "316831c3.34802e"
@@ -1797,7 +1797,7 @@
         "to": "",
         "reg": false,
         "x": 770,
-        "y": 3160,
+        "y": 3680,
         "wires": [
             []
         ]
@@ -1818,7 +1818,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 870,
-        "y": 2860,
+        "y": 3400,
         "wires": [
             [
                 "e059d18d.14f94"
@@ -1845,7 +1845,7 @@
         "to": "",
         "reg": false,
         "x": 550,
-        "y": 2860,
+        "y": 3400,
         "wires": [
             [
                 "f7622c4.93d94d"
@@ -1877,7 +1877,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1100,
-        "y": 2200,
+        "y": 2640,
         "wires": [
             [
                 "632696ba.490f78"
@@ -1899,8 +1899,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 180,
-        "y": 1680,
+        "x": 160,
+        "y": 1960,
         "wires": [
             [
                 "595a477d.4b1148",
@@ -1917,7 +1917,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1110,
-        "y": 1680,
+        "y": 1960,
         "wires": [
             [
                 "ce09fda5.cc774"
@@ -2000,7 +2000,7 @@
         "to": "",
         "reg": false,
         "x": 600,
-        "y": 2500,
+        "y": 2940,
         "wires": [
             [
                 "334e712d.7eae7e"
@@ -2018,7 +2018,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1000,
-        "y": 3520,
+        "y": 4140,
         "wires": [
             [
                 "2e3c9f3a.1e763",
@@ -2033,7 +2033,7 @@
         "name": "Sonderzeichen",
         "info": ".replace(\"{\", 'ä').replace(\"|\", 'ö').replace(\"~\", 'ü').replace(\"[\", 'Ä').replace(\"\\\", 'Ö').replace(\"^\", 'Ü').replace(\"\u001e\", 'ß')\n\n.replace(\"{\", 'ä')\n.replace(\"|\", 'ö')\n.replace(\"~\", 'ü')\n.replace(\"[\", 'Ä')\n.replace(\"\\\", 'Ö')\n.replace(\"^\", 'Ü')\n.replace(\"\u001e\", 'ß')",
         "x": 640,
-        "y": 2380,
+        "y": 2820,
         "wires": []
     },
     {
@@ -2113,7 +2113,7 @@
         "to": "",
         "reg": false,
         "x": 620,
-        "y": 3240,
+        "y": 3760,
         "wires": [
             [
                 "b5336715.625ac8"
@@ -2131,8 +2131,8 @@
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1220,
-        "y": 1760,
+        "x": 1200,
+        "y": 2040,
         "wires": []
     },
     {
@@ -2154,8 +2154,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 1780,
+        "x": 830,
+        "y": 2060,
         "wires": [
             [
                 "c3b205c1.de1d78"
@@ -2181,8 +2181,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 1820,
+        "x": 830,
+        "y": 2100,
         "wires": [
             []
         ]
@@ -2287,8 +2287,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 650,
-        "y": 1760,
+        "x": 630,
+        "y": 2040,
         "wires": [
             [
                 "74acc4ea.a6e16c",
@@ -2320,8 +2320,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1410,
-        "y": 1760,
+        "x": 1390,
+        "y": 2040,
         "wires": [
             []
         ]
@@ -2389,7 +2389,7 @@
             "2c8ab32e.58cffc"
         ],
         "x": 195,
-        "y": 3680,
+        "y": 4300,
         "wires": [
             []
         ]
@@ -2443,7 +2443,7 @@
             "d3472d85.e4e6f"
         ],
         "x": 1375,
-        "y": 3520,
+        "y": 4140,
         "wires": []
     },
     {
@@ -2737,7 +2737,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1235,
-        "y": 1680,
+        "y": 1960,
         "wires": []
     },
     {
@@ -2746,8 +2746,8 @@
         "z": "c5823db2.4ff16",
         "name": "6. Signalstärke ermitteln",
         "info": "",
-        "x": 190,
-        "y": 1640,
+        "x": 160,
+        "y": 1820,
         "wires": []
     },
     {
@@ -2771,8 +2771,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 1700,
+        "x": 630,
+        "y": 1980,
         "wires": [
             []
         ]
@@ -2796,8 +2796,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 850,
-        "y": 1740,
+        "x": 830,
+        "y": 2020,
         "wires": [
             [
                 "c3b205c1.de1d78"
@@ -2812,8 +2812,8 @@
         "links": [
             "2f45da81.fbc626"
         ],
-        "x": 95,
-        "y": 1720,
+        "x": 75,
+        "y": 2000,
         "wires": [
             [
                 "b0deb164.36b31"
@@ -2827,7 +2827,7 @@
         "name": "# Modem Reset durchführen ----------------------------------------------------------------------------------------------------------------------------------",
         "info": "",
         "x": 500,
-        "y": 1900,
+        "y": 2260,
         "wires": []
     },
     {
@@ -2837,7 +2837,7 @@
         "name": "# Modem Reset durchführen ----------------------------------------------------------------------------------------------------------------------------------",
         "info": "",
         "x": 500,
-        "y": 2060,
+        "y": 2420,
         "wires": []
     },
     {
@@ -2850,7 +2850,7 @@
             "868e3cd3.679b2"
         ],
         "x": 415,
-        "y": 1980,
+        "y": 2340,
         "wires": []
     },
     {
@@ -2862,7 +2862,7 @@
             "2f45da81.fbc626"
         ],
         "x": 95,
-        "y": 1980,
+        "y": 2340,
         "wires": [
             [
                 "3989ab8e.9e7874"
@@ -2878,7 +2878,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1275,
-        "y": 1940,
+        "y": 2300,
         "wires": []
     },
     {
@@ -2893,7 +2893,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1100,
-        "y": 2020,
+        "y": 2380,
         "wires": []
     },
     {
@@ -2914,7 +2914,7 @@
         "repair": false,
         "outputs": 1,
         "x": 150,
-        "y": 2200,
+        "y": 2640,
         "wires": [
             [
                 "c6683081.26c2f",
@@ -2930,7 +2930,7 @@
         "name": "7.  # SMS Speicher prüfen",
         "info": "",
         "x": 190,
-        "y": 2160,
+        "y": 2600,
         "wires": []
     },
     {
@@ -2942,7 +2942,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1275,
-        "y": 2200,
+        "y": 2640,
         "wires": []
     },
     {
@@ -2954,7 +2954,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1435,
-        "y": 2580,
+        "y": 3020,
         "wires": []
     },
     {
@@ -2969,7 +2969,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1080,
-        "y": 2240,
+        "y": 2680,
         "wires": []
     },
     {
@@ -2992,7 +2992,7 @@
         "to": "",
         "reg": false,
         "x": 440,
-        "y": 2240,
+        "y": 2680,
         "wires": [
             [
                 "d6f608a8.4052c8"
@@ -3006,7 +3006,7 @@
         "name": "Incomming SMS PUSH",
         "info": "",
         "x": 180,
-        "y": 2260,
+        "y": 2700,
         "wires": []
     },
     {
@@ -3018,7 +3018,7 @@
             "2f45da81.fbc626"
         ],
         "x": 95,
-        "y": 2300,
+        "y": 2740,
         "wires": [
             [
                 "3d01583d.aebe78"
@@ -3034,7 +3034,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1275,
-        "y": 2300,
+        "y": 2740,
         "wires": []
     },
     {
@@ -3044,7 +3044,7 @@
         "name": "SMS INPUT",
         "info": "",
         "x": 150,
-        "y": 2440,
+        "y": 2880,
         "wires": []
     },
     {
@@ -3055,8 +3055,8 @@
         "links": [
             "2f45da81.fbc626"
         ],
-        "x": 35,
-        "y": 2840,
+        "x": 75,
+        "y": 3380,
         "wires": [
             [
                 "fc67751d.ad86d8"
@@ -3072,7 +3072,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1235,
-        "y": 2620,
+        "y": 3060,
         "wires": []
     },
     {
@@ -3091,7 +3091,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 610,
-        "y": 2620,
+        "y": 3060,
         "wires": [
             [
                 "fa0939aa.a1d5c8"
@@ -3105,7 +3105,7 @@
         "name": "Lösche SMS von SIM",
         "info": "",
         "x": 180,
-        "y": 2580,
+        "y": 3020,
         "wires": []
     },
     {
@@ -3117,7 +3117,7 @@
             "261014aa.f98f8c"
         ],
         "x": 75,
-        "y": 2480,
+        "y": 2920,
         "wires": [
             [
                 "6829305e.bccfa"
@@ -3144,7 +3144,7 @@
         "to": "",
         "reg": false,
         "x": 480,
-        "y": 2340,
+        "y": 2780,
         "wires": [
             [
                 "b1b39cbe.8eff8"
@@ -3163,7 +3163,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1110,
-        "y": 2340,
+        "y": 2780,
         "wires": []
     },
     {
@@ -3186,7 +3186,7 @@
         "to": "",
         "reg": false,
         "x": 880,
-        "y": 2760,
+        "y": 3300,
         "wires": [
             [
                 "3d0b0db4.204fe2",
@@ -3215,7 +3215,7 @@
         "to": "",
         "reg": false,
         "x": 1370,
-        "y": 2760,
+        "y": 3300,
         "wires": [
             []
         ]
@@ -3240,7 +3240,7 @@
         "to": "",
         "reg": false,
         "x": 1370,
-        "y": 2820,
+        "y": 3360,
         "wires": [
             []
         ]
@@ -3265,7 +3265,7 @@
         "to": "",
         "reg": false,
         "x": 850,
-        "y": 2820,
+        "y": 3360,
         "wires": [
             [
                 "c71eaeb0.a117c",
@@ -3294,7 +3294,7 @@
         "to": "",
         "reg": false,
         "x": 860,
-        "y": 2900,
+        "y": 3440,
         "wires": [
             [
                 "b9cb5dac.f821b",
@@ -3323,7 +3323,7 @@
         "to": "",
         "reg": false,
         "x": 1370,
-        "y": 2900,
+        "y": 3440,
         "wires": [
             []
         ]
@@ -3341,7 +3341,7 @@
         "payload": "0",
         "payloadType": "num",
         "x": 1370,
-        "y": 2700,
+        "y": 3240,
         "wires": [
             []
         ]
@@ -3358,8 +3358,8 @@
         "topic": "",
         "payload": "false",
         "payloadType": "bool",
-        "x": 1410,
-        "y": 1860,
+        "x": 1390,
+        "y": 2140,
         "wires": [
             []
         ]
@@ -3401,13 +3401,18 @@
                 "t": "eq",
                 "v": "SEND_SMS",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "SIGNAL",
+                "vt": "str"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 6,
+        "outputs": 7,
         "x": 500,
-        "y": 3620,
+        "y": 4240,
         "wires": [
             [
                 "2662c266.dbc2fe"
@@ -3426,6 +3431,9 @@
             ],
             [
                 "62edc352.27b03c"
+            ],
+            [
+                "9a4bce11.64946"
             ]
         ],
         "icon": "node-red/inject.svg"
@@ -3441,7 +3449,7 @@
             "5b54e58f.d8455c"
         ],
         "x": 675,
-        "y": 3520,
+        "y": 4140,
         "wires": []
     },
     {
@@ -3453,7 +3461,7 @@
             "2662c266.dbc2fe"
         ],
         "x": 895,
-        "y": 3520,
+        "y": 4140,
         "wires": [
             [
                 "1c79ed59.c9a4d3",
@@ -3468,7 +3476,7 @@
         "name": "SERIAL_INPUT",
         "info": "",
         "x": 780,
-        "y": 3520,
+        "y": 4140,
         "wires": []
     },
     {
@@ -3480,7 +3488,7 @@
             "76709a4d.54fd34"
         ],
         "x": 675,
-        "y": 3560,
+        "y": 4180,
         "wires": []
     },
     {
@@ -3490,7 +3498,7 @@
         "name": "START",
         "info": "",
         "x": 750,
-        "y": 3560,
+        "y": 4180,
         "wires": []
     },
     {
@@ -3521,7 +3529,7 @@
             "1414f54c.8ea6eb"
         ],
         "x": 95,
-        "y": 1940,
+        "y": 2300,
         "wires": [
             [
                 "638b0a97.f83d14"
@@ -3540,10 +3548,11 @@
             "51da34fb.7b949c",
             "8a1f27d9.04abe8",
             "d5c73f08.77758",
-            "19116b12.fcf025"
+            "19116b12.fcf025",
+            "790c98d8.ab9f68"
         ],
         "x": 675,
-        "y": 3640,
+        "y": 4260,
         "wires": []
     },
     {
@@ -3553,7 +3562,7 @@
         "name": "RESET",
         "info": "",
         "x": 750,
-        "y": 3640,
+        "y": 4260,
         "wires": []
     },
     {
@@ -3565,7 +3574,7 @@
             "74f1dab3.14bd34"
         ],
         "x": 875,
-        "y": 3780,
+        "y": 4400,
         "wires": [
             [
                 "52340b3.4cf63f4"
@@ -3581,7 +3590,7 @@
             "394eb530.0a467a"
         ],
         "x": 675,
-        "y": 3680,
+        "y": 4300,
         "wires": []
     },
     {
@@ -3591,7 +3600,7 @@
         "name": "SET_BAUD",
         "info": "",
         "x": 770,
-        "y": 3680,
+        "y": 4300,
         "wires": []
     },
     {
@@ -3614,7 +3623,7 @@
         "to": "",
         "reg": false,
         "x": 980,
-        "y": 3780,
+        "y": 4400,
         "wires": [
             [
                 "7cf980f6.69c44"
@@ -3637,7 +3646,7 @@
         "repair": false,
         "outputs": 1,
         "x": 1080,
-        "y": 2960,
+        "y": 3500,
         "wires": [
             [
                 "34f38d0f.179172"
@@ -3660,7 +3669,7 @@
         "repair": false,
         "outputs": 1,
         "x": 860,
-        "y": 2540,
+        "y": 2980,
         "wires": [
             [
                 "d01f3747.477d38"
@@ -3683,7 +3692,7 @@
         "repair": false,
         "outputs": 1,
         "x": 860,
-        "y": 2480,
+        "y": 2920,
         "wires": [
             [
                 "a6aecdd1.c3112"
@@ -3706,7 +3715,7 @@
         "repair": false,
         "outputs": 1,
         "x": 960,
-        "y": 2340,
+        "y": 2780,
         "wires": [
             [
                 "46842513.31241c"
@@ -3729,7 +3738,7 @@
         "repair": false,
         "outputs": 1,
         "x": 880,
-        "y": 2240,
+        "y": 2680,
         "wires": [
             [
                 "5910cbcb.174c54"
@@ -3752,7 +3761,7 @@
         "repair": false,
         "outputs": 1,
         "x": 460,
-        "y": 2020,
+        "y": 2380,
         "wires": [
             [
                 "1edb69e7.32c1b6"
@@ -3774,8 +3783,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1020,
-        "y": 1760,
+        "x": 1000,
+        "y": 2040,
         "wires": [
             [
                 "46bb8398.c5cd9c"
@@ -3797,8 +3806,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1020,
-        "y": 1720,
+        "x": 1000,
+        "y": 2000,
         "wires": [
             [
                 "f9494dd3.568cc"
@@ -3937,7 +3946,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1120,
-        "y": 3780,
+        "y": 4400,
         "wires": [
             [
                 "d5261f41.bb261"
@@ -3953,7 +3962,7 @@
             "ed7a57a1.010b68"
         ],
         "x": 675,
-        "y": 3720,
+        "y": 4340,
         "wires": []
     },
     {
@@ -3963,7 +3972,7 @@
         "name": "SEND_SMS",
         "info": "",
         "x": 770,
-        "y": 3720,
+        "y": 4340,
         "wires": []
     },
     {
@@ -3976,7 +3985,7 @@
             "7e34c49a.79e90c"
         ],
         "x": 75,
-        "y": 3160,
+        "y": 3680,
         "wires": [
             [
                 "a45a3a22.151cf8"
@@ -3996,7 +4005,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1180,
-        "y": 3480,
+        "y": 4100,
         "wires": []
     },
     {
@@ -4015,8 +4024,8 @@
         "z": "c5823db2.4ff16",
         "name": "Messenger_LetzteSignalstaerke",
         "info": "",
-        "x": 1710,
-        "y": 1700,
+        "x": 1690,
+        "y": 1980,
         "wires": []
     },
     {
@@ -4025,8 +4034,8 @@
         "z": "c5823db2.4ff16",
         "name": "Messenger_Modus",
         "info": "",
-        "x": 1670,
-        "y": 1820,
+        "x": 1650,
+        "y": 2100,
         "wires": []
     },
     {
@@ -4036,7 +4045,7 @@
         "name": "Messenger_LetzterSendeStatus",
         "info": "",
         "x": 1670,
-        "y": 2760,
+        "y": 3300,
         "wires": []
     },
     {
@@ -4046,7 +4055,7 @@
         "name": "Messenger_SMSEmfangAbsenderID",
         "info": "",
         "x": 1680,
-        "y": 2420,
+        "y": 2860,
         "wires": []
     },
     {
@@ -4056,7 +4065,7 @@
         "name": "Messenger_SMSEmfangText",
         "info": "",
         "x": 1660,
-        "y": 2500,
+        "y": 2940,
         "wires": []
     },
     {
@@ -4071,8 +4080,8 @@
         "topic": "",
         "payload": "0",
         "payloadType": "num",
-        "x": 1410,
-        "y": 1680,
+        "x": 1390,
+        "y": 1960,
         "wires": [
             []
         ]
@@ -4205,8 +4214,8 @@
             "a606f561.3ef308",
             "ba148604.351808"
         ],
-        "x": 1315,
-        "y": 1640,
+        "x": 1295,
+        "y": 1920,
         "wires": [
             [
                 "4cecd777.dd6758"
@@ -4232,8 +4241,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1410,
-        "y": 1640,
+        "x": 1390,
+        "y": 1920,
         "wires": [
             []
         ]
@@ -4249,7 +4258,7 @@
             "ba148604.351808"
         ],
         "x": 1275,
-        "y": 2660,
+        "y": 3200,
         "wires": [
             [
                 "6cf70f8c.06d81"
@@ -4276,7 +4285,7 @@
         "to": "",
         "reg": false,
         "x": 1370,
-        "y": 2660,
+        "y": 3200,
         "wires": [
             []
         ]
@@ -4325,8 +4334,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
-        "y": 1680,
+        "x": 460,
+        "y": 1960,
         "wires": [
             []
         ]
@@ -4350,8 +4359,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 480,
-        "y": 1760,
+        "x": 460,
+        "y": 2040,
         "wires": [
             []
         ]
@@ -4366,18 +4375,24 @@
         "rules": [
             {
                 "t": "true"
+            },
+            {
+                "t": "false"
             }
         ],
         "checkall": "false",
         "repair": false,
-        "outputs": 1,
-        "x": 190,
-        "y": 1760,
+        "outputs": 2,
+        "x": 170,
+        "y": 2040,
         "wires": [
             [
                 "c176ee48.710aa",
                 "60429020.5a23e",
                 "c8a3a1a3.3b0aa"
+            ],
+            [
+                "7a132310.043ebc"
             ]
         ]
     },
@@ -4386,7 +4401,7 @@
         "type": "switch",
         "z": "c5823db2.4ff16",
         "name": "nicht leer",
-        "property": "payload.message",
+        "property": "payload.number",
         "propertyType": "msg",
         "rules": [
             {
@@ -4397,7 +4412,7 @@
         "repair": false,
         "outputs": 1,
         "x": 220,
-        "y": 3160,
+        "y": 3680,
         "wires": [
             [
                 "a013bf4d.5fe9f",
@@ -4412,10 +4427,10 @@
         "id": "78e3a141.c036c",
         "type": "comment",
         "z": "c5823db2.4ff16",
-        "name": "SEND SMS INPUT",
+        "name": "SEND SMS ",
         "info": "",
-        "x": 150,
-        "y": 3120,
+        "x": 130,
+        "y": 3640,
         "wires": []
     },
     {
@@ -4465,10 +4480,11 @@
             "a1a08d4.994407",
             "1b542991.083246",
             "86004cfc.fd58c",
-            "46b8e5ab.aa57cc"
+            "46b8e5ab.aa57cc",
+            "377f601b.b5fc"
         ],
         "x": 195,
-        "y": 3740,
+        "y": 4360,
         "wires": [
             [
                 "1941ac98.e44073"
@@ -4579,8 +4595,8 @@
         "func": "msg.payload = {fill:\"yellow\",shape:\"ring\",text:\"⚪️⚪️⚪️⚪️⚪️⚪️️⚫️⚫️ Signalstärke:\" + msg.payload};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 850,
-        "y": 1860,
+        "x": 830,
+        "y": 2140,
         "wires": [
             [
                 "81a24989.245cd8"
@@ -4595,8 +4611,8 @@
         "links": [
             "4ac832ef.ec9c0c"
         ],
-        "x": 1275,
-        "y": 1860,
+        "x": 1255,
+        "y": 2140,
         "wires": []
     },
     {
@@ -4615,7 +4631,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 290,
-        "y": 3740,
+        "y": 4360,
         "wires": [
             []
         ]
@@ -4657,7 +4673,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 1070,
-        "y": 2780,
+        "y": 3320,
         "wires": [
             [
                 "636bffcd.5f22e"
@@ -4673,7 +4689,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 1195,
-        "y": 2780,
+        "y": 3320,
         "wires": []
     },
     {
@@ -4685,7 +4701,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 1070,
-        "y": 2860,
+        "y": 3400,
         "wires": [
             [
                 "26715a38.f1b7e6",
@@ -4702,7 +4718,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 1395,
-        "y": 2860,
+        "y": 3400,
         "wires": []
     },
     {
@@ -4710,11 +4726,13 @@
         "type": "function",
         "z": "c5823db2.4ff16",
         "name": "Status",
-        "func": "msg.payload = {fill:\"green\",shape:\"ring\",text:msg.payload};\nreturn msg;",
+        "func": "msg.payload = {fill:\"red\",shape:\"ring\",text:msg.payload};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
         "x": 1070,
-        "y": 2920,
+        "y": 3460,
         "wires": [
             [
                 "462a16f.c5339e8"
@@ -4730,7 +4748,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 1195,
-        "y": 2920,
+        "y": 3460,
         "wires": []
     },
     {
@@ -4742,7 +4760,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 1310,
-        "y": 2860,
+        "y": 3400,
         "wires": [
             [
                 "26715a38.f1b7e6"
@@ -4765,7 +4783,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 1190,
-        "y": 2860,
+        "y": 3400,
         "wires": [
             [
                 "3e7a335f.a0ec9c"
@@ -4781,7 +4799,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 410,
-        "y": 2280,
+        "y": 2720,
         "wires": [
             [
                 "daa0a37.9d8786",
@@ -4798,7 +4816,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 755,
-        "y": 2280,
+        "y": 2720,
         "wires": []
     },
     {
@@ -4817,7 +4835,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 530,
-        "y": 2280,
+        "y": 2720,
         "wires": [
             [
                 "a044f464.a0beb8"
@@ -4833,7 +4851,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 650,
-        "y": 2280,
+        "y": 2720,
         "wires": [
             [
                 "daa0a37.9d8786"
@@ -4869,10 +4887,11 @@
             "e0abd796.b78e18",
             "d5c73f08.77758",
             "22130148.a68e0e",
-            "19116b12.fcf025"
+            "19116b12.fcf025",
+            "790c98d8.ab9f68"
         ],
         "x": 675,
-        "y": 3600,
+        "y": 4220,
         "wires": []
     },
     {
@@ -4882,7 +4901,7 @@
         "name": "STOP",
         "info": "",
         "x": 750,
-        "y": 3600,
+        "y": 4220,
         "wires": []
     },
     {
@@ -4894,7 +4913,7 @@
             "ba148604.351808"
         ],
         "x": 895,
-        "y": 3640,
+        "y": 4260,
         "wires": [
             [
                 "15c068cf.f06317",
@@ -4911,7 +4930,7 @@
             "a606f561.3ef308"
         ],
         "x": 895,
-        "y": 3600,
+        "y": 4220,
         "wires": [
             [
                 "a1dd1f4a.e3b24"
@@ -4927,7 +4946,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 1010,
-        "y": 3600,
+        "y": 4220,
         "wires": [
             [
                 "d5bb8329.c51b4"
@@ -4943,7 +4962,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 1135,
-        "y": 3600,
+        "y": 4220,
         "wires": []
     },
     {
@@ -4955,8 +4974,8 @@
             "a606f561.3ef308",
             "ba148604.351808"
         ],
-        "x": 1315,
-        "y": 1900,
+        "x": 1295,
+        "y": 2180,
         "wires": [
             [
                 "59d92d2.cc2d3d4"
@@ -4982,8 +5001,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1410,
-        "y": 1900,
+        "x": 1390,
+        "y": 2180,
         "wires": [
             []
         ]
@@ -4997,7 +5016,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 975,
-        "y": 3160,
+        "y": 3680,
         "wires": []
     },
     {
@@ -5385,7 +5404,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 1220,
-        "y": 3520,
+        "y": 4140,
         "wires": [
             [
                 "2f45da81.fbc626",
@@ -5409,7 +5428,7 @@
         "repair": false,
         "outputs": 1,
         "x": 860,
-        "y": 2400,
+        "y": 2840,
         "wires": [
             [
                 "f579b3b9.6e146"
@@ -5425,7 +5444,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 370,
-        "y": 2140,
+        "y": 2580,
         "wires": [
             [
                 "565f2215.ed8bec",
@@ -5450,7 +5469,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 530,
-        "y": 2160,
+        "y": 2600,
         "wires": [
             [
                 "a8c941b4.74d58"
@@ -5462,11 +5481,13 @@
         "type": "function",
         "z": "c5823db2.4ff16",
         "name": "Status",
-        "func": "msg.payload = {fill:\"yellow\",shape:\"ring\",text:\"⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️\"};\nreturn msg;",
+        "func": "msg.payload = {fill:\"green\",shape:\"dot\",text:\"⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪ Verbunden\"};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
         "x": 1150,
-        "y": 2160,
+        "y": 2600,
         "wires": [
             [
                 "565f2215.ed8bec"
@@ -5482,7 +5503,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 1275,
-        "y": 2140,
+        "y": 2580,
         "wires": []
     },
     {
@@ -5492,7 +5513,7 @@
         "name": "🔵;🔴;⚫️;⚪️;🟢;🔘;",
         "info": "⚫️⚫️⚫️⚫️⚫️⚫️⚫️⚫️\n⚪️️️️️️️️⚫️⚫️⚫️⚫️⚫️⚫️⚫️\n⚪️⚪️️⚫️⚫️⚫️⚫️⚫️⚫️\n⚪️⚪️⚪️️⚫️⚫️⚫️⚫️⚫️\n⚪️⚪️⚪️⚪️️⚫️⚫️⚫️⚫️\n⚪️⚪️⚪️⚪️⚪️️⚫️⚫️⚫️\n⚪️⚪️⚪️⚪️⚪️⚪️️⚫️⚫️\n⚪️⚪️⚪️⚪️⚪️⚪️⚪️️⚫️\n⚪️⚪️⚪️⚪️⚪️⚪️⚪️⚪️",
         "x": 180,
-        "y": 3500,
+        "y": 4120,
         "wires": []
     },
     {
@@ -5511,7 +5532,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 530,
-        "y": 2120,
+        "y": 2560,
         "wires": [
             [
                 "2b32009e.bffc4"
@@ -5527,7 +5548,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 1150,
-        "y": 2120,
+        "y": 2560,
         "wires": [
             [
                 "565f2215.ed8bec"
@@ -5598,7 +5619,7 @@
             "74508830.baece8"
         ],
         "x": 675,
-        "y": 3120,
+        "y": 3640,
         "wires": []
     },
     {
@@ -5610,7 +5631,7 @@
             "62ccc560.b18e4c"
         ],
         "x": 735,
-        "y": 2860,
+        "y": 3400,
         "wires": [
             [
                 "f7622c4.93d94d"
@@ -5624,7 +5645,7 @@
         "name": "to Serial",
         "info": "",
         "x": 100,
-        "y": 3680,
+        "y": 4300,
         "wires": []
     },
     {
@@ -5634,7 +5655,7 @@
         "name": "Status",
         "info": "",
         "x": 90,
-        "y": 3740,
+        "y": 4360,
         "wires": []
     },
     {
@@ -5646,8 +5667,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 210,
-        "y": 3940,
+        "x": 230,
+        "y": 4700,
         "wires": [
             [
                 "e001b170.84f7f"
@@ -5663,8 +5684,8 @@
         "method": "post",
         "upload": false,
         "swaggerDoc": "",
-        "x": 210,
-        "y": 4020,
+        "x": 230,
+        "y": 4780,
         "wires": [
             [
                 "6533fd1.1691d04"
@@ -5681,8 +5702,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 650,
-        "y": 3900,
+        "x": 670,
+        "y": 4660,
         "wires": [
             [
                 "2aa8fb3.a165504"
@@ -5699,8 +5720,8 @@
         "format": "javascript",
         "syntax": "plain",
         "template": "$(document).ready(function(e) {\n    \n    $(\"form[ajax=true]\").submit(function(e) {\n        \n        e.preventDefault();\n        \n        var form_data = $(this).serialize();\n        var form_url = $(this).attr(\"action\");\n        var form_method = $(this).attr(\"method\").toUpperCase();\n        \n        $(\"#loadingimg\").show();\n        \n        $.ajax({\n            url: form_url, \n            type: form_method,      \n            data: form_data,     \n            cache: false,\n            success: function(returnhtml){                          \n                $(\"#result\").html(returnhtml); \n                $(\"#loadingimg\").hide();                    \n            }           \n        });    \n        \n    });\n    \n});",
-        "x": 890,
-        "y": 3940,
+        "x": 910,
+        "y": 4700,
         "wires": [
             [
                 "991a5843.dc6488"
@@ -5714,8 +5735,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 1350,
-        "y": 3940,
+        "x": 1370,
+        "y": 4700,
         "wires": []
     },
     {
@@ -5728,8 +5749,8 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n  <head>\n    <title>TC35 GSM Modul</title>\n    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\">\n    <meta charset=\"utf-8\">\n    <script src=\"http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js\"></script>\n    <style>{{{payload.style}}}</style>\n  </head>\n\n<div>\n  <h2>SMS senden</h2>\n  <form method=\"post\" action=\"/{{url}}\" ajax=\"true\">\n    <label for=\"number\">Nummer</label>\n    <input type=\"text\" id=\"number\" name=\"number\">\n    \n    <label for=\"message\">SMS Text</label>\n    <input type=\"text\" id=\"message\" name=\"message\">\n  \n    <input type=\"submit\" value=\"senden\">\n  </form>\n  <span id=\"result\"></span>\n</div>\n\n</body>\n</html>\n<script>{{{payload.script}}}</script>",
-        "x": 1170,
-        "y": 3940,
+        "x": 1190,
+        "y": 4700,
         "wires": [
             [
                 "12c6983a.49bb58"
@@ -5742,8 +5763,8 @@
         "z": "c5823db2.4ff16",
         "name": "Website",
         "info": "",
-        "x": 160,
-        "y": 3900,
+        "x": 180,
+        "y": 4660,
         "wires": []
     },
     {
@@ -5752,8 +5773,8 @@
         "z": "c5823db2.4ff16",
         "name": "Form Submission",
         "info": "",
-        "x": 180,
-        "y": 3980,
+        "x": 200,
+        "y": 4740,
         "wires": []
     },
     {
@@ -5771,8 +5792,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 1,
-        "x": 420,
-        "y": 4020,
+        "x": 440,
+        "y": 4780,
         "wires": [
             [
                 "8f80657e.57b7d8",
@@ -5786,8 +5807,8 @@
         "z": "c5823db2.4ff16",
         "name": "SMS WEBIF",
         "info": "",
-        "x": 90,
-        "y": 3860,
+        "x": 110,
+        "y": 4620,
         "wires": []
     },
     {
@@ -5805,8 +5826,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": true,
-        "x": 870,
-        "y": 4020,
+        "x": 890,
+        "y": 4780,
         "wires": [
             [
                 "7e34c49a.79e90c"
@@ -5823,8 +5844,8 @@
         "format": "html",
         "syntax": "mustache",
         "template": "input[type=text], select {\n    width: 100%;\n    padding: 12px 20px;\n    margin: 8px 0;\n    display: inline-block;\n    border: 1px solid #ccc;\n    border-radius: 4px;\n    box-sizing: border-box;\n}\n\ninput[type=submit] {\n    width: 100%;\n    background-color: #285E8A;\n    color: white;\n    padding: 14px 20px;\n    margin: 8px 0;\n    border: none;\n    border-radius: 4px;\n    cursor: pointer;\n}\n\ninput[type=submit]:hover {\n    background-color: #1990C7;\n}\n\ndiv {\n    border: 1px solid #ccc;\n    border-radius: 10px;\n    background-color: #f2f2f2;\n    padding: 20px;\n}\n\nh2 {\n    color: #285E8A;\n    text-transform: uppercase;\n    letter-spacing: 0.1em;\n    text-align: center;\n}",
-        "x": 1050,
-        "y": 3940,
+        "x": 1070,
+        "y": 4700,
         "wires": [
             [
                 "e2f365e5.5c0148"
@@ -5839,8 +5860,8 @@
         "links": [
             "ed7a57a1.010b68"
         ],
-        "x": 1135,
-        "y": 4020,
+        "x": 1155,
+        "y": 4780,
         "wires": []
     },
     {
@@ -5851,8 +5872,8 @@
         "func": "msg.payload = 'OK';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 660,
-        "y": 3980,
+        "x": 680,
+        "y": 4740,
         "wires": [
             [
                 "a00985b7.785908"
@@ -5864,8 +5885,8 @@
         "type": "http response",
         "z": "c5823db2.4ff16",
         "name": "",
-        "x": 1170,
-        "y": 3980,
+        "x": 1190,
+        "y": 4740,
         "wires": []
     },
     {
@@ -5877,7 +5898,7 @@
             "c6e0a26e.b0849"
         ],
         "x": 1375,
-        "y": 3480,
+        "y": 4100,
         "wires": []
     },
     {
@@ -5889,7 +5910,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1100,
-        "y": 1040,
+        "y": 1100,
         "wires": [
             [
                 "527c20bd.30aa8"
@@ -5922,7 +5943,7 @@
         "repair": false,
         "outputs": 3,
         "x": 400,
-        "y": 1180,
+        "y": 1240,
         "wires": [
             [
                 "a8950858.e21598",
@@ -5954,7 +5975,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1130,
-        "y": 1120,
+        "y": 1180,
         "wires": []
     },
     {
@@ -5973,7 +5994,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 160,
-        "y": 1060,
+        "y": 1120,
         "wires": [
             [
                 "50d74fba.d16e7"
@@ -6000,7 +6021,7 @@
         "to": "",
         "reg": false,
         "x": 1410,
-        "y": 1180,
+        "y": 1240,
         "wires": [
             []
         ]
@@ -6012,7 +6033,7 @@
         "name": "4. SIMPin prüfen",
         "info": "",
         "x": 160,
-        "y": 1020,
+        "y": 1080,
         "wires": []
     },
     {
@@ -6033,7 +6054,7 @@
         "repair": false,
         "outputs": 1,
         "x": 220,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             [
                 "accb6e8a.8bd39"
@@ -6060,7 +6081,7 @@
         "to": "",
         "reg": false,
         "x": 420,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -6092,7 +6113,7 @@
         "to": "",
         "reg": false,
         "x": 680,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             [
                 "85d310c7.35352",
@@ -6116,7 +6137,7 @@
         "repair": false,
         "outputs": 1,
         "x": 230,
-        "y": 1180,
+        "y": 1240,
         "wires": [
             [
                 "2589c028.713e5"
@@ -6139,7 +6160,7 @@
         "repair": false,
         "outputs": 1,
         "x": 920,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             [
                 "9ae9e884.3b92c8"
@@ -6155,7 +6176,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 1090,
-        "y": 1200,
+        "y": 1260,
         "wires": [
             [
                 "b9f8bc1b.416c8"
@@ -6181,7 +6202,7 @@
         "repair": false,
         "outputs": 2,
         "x": 670,
-        "y": 1060,
+        "y": 1120,
         "wires": [
             [
                 "fe8b7b71.fba018"
@@ -6200,7 +6221,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1110,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             [
                 "e7107356.0287a"
@@ -6227,7 +6248,7 @@
         "to": "",
         "reg": false,
         "x": 910,
-        "y": 1080,
+        "y": 1140,
         "wires": [
             [
                 "c68b5c6f.2b5ef"
@@ -6241,7 +6262,7 @@
         "name": "SIM PIN setzen",
         "info": "",
         "x": 1340,
-        "y": 1080,
+        "y": 1140,
         "wires": []
     },
     {
@@ -6251,7 +6272,7 @@
         "name": "SIM prüfen",
         "info": "",
         "x": 1320,
-        "y": 1040,
+        "y": 1100,
         "wires": []
     },
     {
@@ -6265,7 +6286,7 @@
         "initialize": "",
         "finalize": "",
         "x": 770,
-        "y": 1260,
+        "y": 1320,
         "wires": [
             [
                 "20657948.e5fc26"
@@ -6283,7 +6304,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1100,
-        "y": 1160,
+        "y": 1220,
         "wires": [
             [
                 "497481f8.e79cb"
@@ -6297,7 +6318,7 @@
         "name": "SIM prüfen",
         "info": "",
         "x": 1320,
-        "y": 1160,
+        "y": 1220,
         "wires": []
     },
     {
@@ -6319,7 +6340,7 @@
         "repair": false,
         "outputs": 2,
         "x": 910,
-        "y": 1220,
+        "y": 1280,
         "wires": [
             [
                 "2ce2b587.f7b13a"
@@ -6340,7 +6361,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1090,
-        "y": 1280,
+        "y": 1340,
         "wires": [
             [
                 "d75bf918.3ee3f8",
@@ -6364,7 +6385,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 1090,
-        "y": 1240,
+        "y": 1300,
         "wires": [
             [
                 "2ce2b587.f7b13a"
@@ -6391,7 +6412,7 @@
         "to": "",
         "reg": false,
         "x": 1410,
-        "y": 1140,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -6412,7 +6433,7 @@
         "repair": false,
         "outputs": 1,
         "x": 640,
-        "y": 1260,
+        "y": 1320,
         "wires": [
             [
                 "f0f681e2.26507"
@@ -6439,7 +6460,7 @@
         "to": "",
         "reg": false,
         "x": 680,
-        "y": 1220,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -6453,7 +6474,7 @@
             "2f45da81.fbc626"
         ],
         "x": 95,
-        "y": 1120,
+        "y": 1180,
         "wires": [
             [
                 "281b71c2.3aceae",
@@ -6470,7 +6491,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1235,
-        "y": 1040,
+        "y": 1100,
         "wires": []
     },
     {
@@ -6482,7 +6503,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1235,
-        "y": 1080,
+        "y": 1140,
         "wires": []
     },
     {
@@ -6494,7 +6515,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1235,
-        "y": 1160,
+        "y": 1220,
         "wires": []
     },
     {
@@ -6506,7 +6527,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 1235,
-        "y": 1240,
+        "y": 1300,
         "wires": []
     },
     {
@@ -6518,7 +6539,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 855,
-        "y": 1260,
+        "y": 1320,
         "wires": []
     },
     {
@@ -6528,7 +6549,7 @@
         "name": "5 Sekunden bis zum vollständigen Einloggen beim Provider warten",
         "info": "",
         "x": 680,
-        "y": 1380,
+        "y": 1460,
         "wires": []
     },
     {
@@ -6549,7 +6570,7 @@
         "repair": false,
         "outputs": 1,
         "x": 140,
-        "y": 1500,
+        "y": 1580,
         "wires": [
             [
                 "35b05178.4eb51e"
@@ -6568,7 +6589,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 1160,
-        "y": 1460,
+        "y": 1540,
         "wires": []
     },
     {
@@ -6587,7 +6608,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 900,
-        "y": 1580,
+        "y": 1660,
         "wires": [
             [
                 "69a93d98.4e2ea4"
@@ -6603,7 +6624,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1100,
-        "y": 1580,
+        "y": 1660,
         "wires": [
             [
                 "d95f8bde.cb2d58"
@@ -6626,7 +6647,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 160,
-        "y": 1420,
+        "y": 1500,
         "wires": [
             [
                 "1b23d111.e0ac8f"
@@ -6642,7 +6663,7 @@
         "outputs": "1",
         "noerr": 0,
         "x": 1100,
-        "y": 1420,
+        "y": 1500,
         "wires": [
             [
                 "ba941dd1.dd4a3"
@@ -6669,7 +6690,7 @@
         "to": "",
         "reg": false,
         "x": 1410,
-        "y": 1500,
+        "y": 1580,
         "wires": [
             []
         ]
@@ -6681,7 +6702,7 @@
         "name": "5. Prüfen ob bei Mobilfunkprovider angemeldet",
         "info": "",
         "x": 250,
-        "y": 1380,
+        "y": 1460,
         "wires": []
     },
     {
@@ -6693,7 +6714,7 @@
             "7b4cd02.4c4de3"
         ],
         "x": 735,
-        "y": 1580,
+        "y": 1660,
         "wires": [
             [
                 "316636.26b4d9ca"
@@ -6709,7 +6730,7 @@
             "cd93d7c1.69ff58"
         ],
         "x": 675,
-        "y": 1580,
+        "y": 1660,
         "wires": []
     },
     {
@@ -6732,7 +6753,7 @@
         "to": "",
         "reg": false,
         "x": 710,
-        "y": 1460,
+        "y": 1540,
         "wires": [
             [
                 "883b7762.6e3ef8",
@@ -6757,7 +6778,7 @@
         "repair": false,
         "outputs": 1,
         "x": 920,
-        "y": 1460,
+        "y": 1540,
         "wires": [
             [
                 "a243e16f.9615b"
@@ -6775,7 +6796,7 @@
         "initialize": "",
         "finalize": "",
         "x": 710,
-        "y": 1540,
+        "y": 1620,
         "wires": [
             [
                 "1b542991.083246"
@@ -6793,7 +6814,7 @@
         "initialize": "",
         "finalize": "",
         "x": 490,
-        "y": 1480,
+        "y": 1560,
         "wires": [
             [
                 "44232e5c.57d96"
@@ -6847,7 +6868,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 740,
-        "y": 1420,
+        "y": 1500,
         "wires": [
             [
                 "1b23d111.e0ac8f"
@@ -6865,7 +6886,7 @@
         "initialize": "",
         "finalize": "",
         "x": 710,
-        "y": 1500,
+        "y": 1580,
         "wires": [
             [
                 "a1a08d4.994407"
@@ -6891,7 +6912,7 @@
         "repair": false,
         "outputs": 2,
         "x": 280,
-        "y": 1500,
+        "y": 1580,
         "wires": [
             [
                 "a871dc85.ace06"
@@ -6910,7 +6931,7 @@
             "9fc2b488.c93f58"
         ],
         "x": 395,
-        "y": 1520,
+        "y": 1600,
         "wires": []
     },
     {
@@ -6933,7 +6954,7 @@
         "to": "",
         "reg": false,
         "x": 1410,
-        "y": 1460,
+        "y": 1540,
         "wires": [
             []
         ]
@@ -6947,7 +6968,7 @@
             "2f45da81.fbc626"
         ],
         "x": 35,
-        "y": 1500,
+        "y": 1580,
         "wires": [
             [
                 "b8e1f904.e6ec98"
@@ -6963,7 +6984,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1235,
-        "y": 1420,
+        "y": 1500,
         "wires": []
     },
     {
@@ -6975,7 +6996,7 @@
             "a7b72d2b.ef6f"
         ],
         "x": 1235,
-        "y": 1580,
+        "y": 1660,
         "wires": []
     },
     {
@@ -6987,7 +7008,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 795,
-        "y": 1500,
+        "y": 1580,
         "wires": []
     },
     {
@@ -6999,7 +7020,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 795,
-        "y": 1540,
+        "y": 1620,
         "wires": []
     },
     {
@@ -7013,7 +7034,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1010,
-        "y": 3680,
+        "y": 4300,
         "wires": [
             [
                 "86004cfc.fd58c"
@@ -7031,7 +7052,7 @@
         "initialize": "",
         "finalize": "",
         "x": 1290,
-        "y": 3680,
+        "y": 4300,
         "wires": [
             [
                 "46b8e5ab.aa57cc"
@@ -7047,7 +7068,7 @@
             "2698c7b3.cd2e78"
         ],
         "x": 1195,
-        "y": 3680,
+        "y": 4300,
         "wires": [
             [
                 "e6aae470.66bf98",
@@ -7075,7 +7096,7 @@
         "to": "",
         "reg": false,
         "x": 1360,
-        "y": 3640,
+        "y": 4260,
         "wires": [
             []
         ]
@@ -7100,7 +7121,7 @@
         "to": "",
         "reg": false,
         "x": 1080,
-        "y": 3640,
+        "y": 4260,
         "wires": [
             []
         ]
@@ -7114,7 +7135,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 1135,
-        "y": 3680,
+        "y": 4300,
         "wires": []
     },
     {
@@ -7126,7 +7147,7 @@
             "4ac832ef.ec9c0c"
         ],
         "x": 1415,
-        "y": 3680,
+        "y": 4300,
         "wires": []
     },
     {
@@ -7157,10 +7178,11 @@
         "links": [
             "ba148604.351808",
             "a606f561.3ef308",
-            "892aa046.ff347"
+            "892aa046.ff347",
+            "9a4bce11.64946"
         ],
-        "x": 515,
-        "y": 1640,
+        "x": 235,
+        "y": 1920,
         "wires": [
             [
                 "8a03fda8.774de"
@@ -7186,8 +7208,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 1640,
+        "x": 410,
+        "y": 1920,
         "wires": [
             [
                 "e3d88ce1.b0cf5"
@@ -7209,8 +7231,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 800,
-        "y": 1660,
+        "x": 700,
+        "y": 1920,
         "wires": [
             [
                 "772cf128.d25fc"
@@ -7235,8 +7257,8 @@
         "onceDelay": "1",
         "topic": "",
         "payloadType": "str",
-        "x": 490,
-        "y": 1600,
+        "x": 190,
+        "y": 1880,
         "wires": [
             [
                 "8a03fda8.774de"
@@ -7252,8 +7274,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 240,
-        "y": 4140,
+        "x": 260,
+        "y": 4900,
         "wires": [
             [
                 "7653f533.4d42fc",
@@ -7266,8 +7288,8 @@
         "type": "http response",
         "z": "c5823db2.4ff16",
         "name": "",
-        "x": 1170,
-        "y": 4180,
+        "x": 1190,
+        "y": 4940,
         "wires": []
     },
     {
@@ -7288,8 +7310,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 710,
-        "y": 4100,
+        "x": 730,
+        "y": 4860,
         "wires": [
             [
                 "966ee45.998c718",
@@ -7315,8 +7337,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": true,
-        "x": 1050,
-        "y": 4180,
+        "x": 1070,
+        "y": 4940,
         "wires": [
             [
                 "89429a79.c68628"
@@ -7338,8 +7360,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": false,
-        "x": 490,
-        "y": 4180,
+        "x": 510,
+        "y": 4940,
         "wires": [
             [
                 "5475d8cf.3ddb88"
@@ -7356,8 +7378,8 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n    <head>\n       <h1>TC35 API</h1> \n    </head>\n    <body>\n        <h1>error unknown API request!</h1>\n    </body>\n</html>",
-        "x": 710,
-        "y": 4180,
+        "x": 730,
+        "y": 4940,
         "wires": [
             [
                 "456f1ccd.9c1514"
@@ -7374,8 +7396,8 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n    <head>\n        <h1>TC35 Web API</h1>\n    </head>\n    <body>\n        <h1>error wrong Value!</h1>\n    </body>\n</html>",
-        "x": 870,
-        "y": 4120,
+        "x": 890,
+        "y": 4880,
         "wires": [
             [
                 "456f1ccd.9c1514"
@@ -7392,8 +7414,8 @@
         "format": "handlebars",
         "syntax": "mustache",
         "template": "<html>\n    <head>\n       <h1>TC35 Web API</h1> \n    </head>\n    <body>\n        <h1>OK</h1>\n        <h1>Message send</h1>\n    </body>\n</html>",
-        "x": 870,
-        "y": 4080,
+        "x": 890,
+        "y": 4840,
         "wires": [
             [
                 "456f1ccd.9c1514"
@@ -7420,8 +7442,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 520,
-        "y": 4140,
+        "x": 540,
+        "y": 4900,
         "wires": [
             [
                 "aa5d5509.171668"
@@ -7437,8 +7459,8 @@
         "z": "c5823db2.4ff16",
         "name": "Web API Input",
         "info": "",
-        "x": 90,
-        "y": 4100,
+        "x": 110,
+        "y": 4860,
         "wires": []
     },
     {
@@ -7451,7 +7473,7 @@
             "19116b12.fcf025"
         ],
         "x": 375,
-        "y": 3120,
+        "y": 3640,
         "wires": []
     },
     {
@@ -7460,10 +7482,11 @@
         "z": "c5823db2.4ff16",
         "name": "START",
         "links": [
-            "8f25dd59.2425b"
+            "8f25dd59.2425b",
+            "9a4bce11.64946"
         ],
-        "x": 855,
-        "y": 1620,
+        "x": 735,
+        "y": 1880,
         "wires": [
             [
                 "772cf128.d25fc"
@@ -7479,7 +7502,7 @@
             "10412741.96f149"
         ],
         "x": 935,
-        "y": 2940,
+        "y": 3480,
         "wires": []
     },
     {
@@ -7498,7 +7521,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 550,
-        "y": 2940,
+        "y": 3480,
         "wires": [
             [
                 "eed689d8.5f7788"
@@ -7525,7 +7548,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 2940,
+        "y": 3480,
         "wires": [
             [
                 "8f25dd59.2425b"
@@ -7541,7 +7564,7 @@
             "2f45da81.fbc626"
         ],
         "x": 75,
-        "y": 3340,
+        "y": 3860,
         "wires": [
             [
                 "90e6fc1d.cbf73"
@@ -7564,7 +7587,7 @@
         "repair": false,
         "outputs": 1,
         "x": 230,
-        "y": 3340,
+        "y": 3860,
         "wires": [
             [
                 "5feabc85.abf364"
@@ -7589,7 +7612,7 @@
         "repair": false,
         "outputs": 1,
         "x": 420,
-        "y": 3340,
+        "y": 3860,
         "wires": [
             [
                 "6294707f.a6dd7",
@@ -7617,7 +7640,7 @@
         "to": "",
         "reg": false,
         "x": 490,
-        "y": 3280,
+        "y": 3800,
         "wires": [
             []
         ]
@@ -7634,6 +7657,13 @@
                 "pt": "flow",
                 "to": "payload",
                 "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ENTER",
+                "pt": "msg",
+                "to": "\\n",
+                "tot": "str"
             }
         ],
         "action": "",
@@ -7642,11 +7672,11 @@
         "to": "",
         "reg": false,
         "x": 610,
-        "y": 3340,
+        "y": 3860,
         "wires": [
             [
                 "71360eb9.54bda",
-                "66d855e4.0c033c"
+                "f215c308.5ee17"
             ]
         ]
     },
@@ -7670,7 +7700,7 @@
         "to": "",
         "reg": false,
         "x": 630,
-        "y": 3380,
+        "y": 3900,
         "wires": [
             []
         ]
@@ -7752,7 +7782,7 @@
         "to": "",
         "reg": false,
         "x": 800,
-        "y": 3320,
+        "y": 3820,
         "wires": [
             [
                 "66d855e4.0c033c"
@@ -7770,7 +7800,7 @@
         "initialize": "",
         "finalize": "",
         "x": 980,
-        "y": 3340,
+        "y": 3820,
         "wires": [
             [
                 "2c8ab32e.58cffc"
@@ -7785,8 +7815,8 @@
         "links": [
             "a7b72d2b.ef6f"
         ],
-        "x": 1095,
-        "y": 3340,
+        "x": 1155,
+        "y": 3860,
         "wires": []
     },
     {
@@ -7804,8 +7834,8 @@
         "randomLast": "5",
         "randomUnits": "seconds",
         "drop": true,
-        "x": 950,
-        "y": 1660,
+        "x": 930,
+        "y": 1920,
         "wires": [
             [
                 "595a477d.4b1148"
@@ -7855,7 +7885,7 @@
         "to": "",
         "reg": false,
         "x": 1210,
-        "y": 3440,
+        "y": 4060,
         "wires": [
             []
         ]
@@ -7871,7 +7901,7 @@
         "inout": "out",
         "property": "port",
         "x": 1010,
-        "y": 3440,
+        "y": 4060,
         "wires": [
             [
                 "86cbc714.c760b8",
@@ -7894,7 +7924,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1170,
-        "y": 3400,
+        "y": 4020,
         "wires": []
     },
     {
@@ -7917,7 +7947,7 @@
         "to": "",
         "reg": false,
         "x": 970,
-        "y": 3820,
+        "y": 4440,
         "wires": [
             []
         ]
@@ -7944,8 +7974,8 @@
         "checkall": "false",
         "repair": false,
         "outputs": 2,
-        "x": 420,
-        "y": 3940,
+        "x": 440,
+        "y": 4700,
         "wires": [
             [
                 "cc25047.2b8b7f8"
@@ -7965,11 +7995,256 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 680,
-        "y": 3940,
+        "x": 700,
+        "y": 4700,
         "wires": [
             [
                 "2aa8fb3.a165504"
+            ]
+        ]
+    },
+    {
+        "id": "9a4bce11.64946",
+        "type": "link out",
+        "z": "c5823db2.4ff16",
+        "name": "SIGNAL",
+        "links": [
+            "dafbb857.10c068",
+            "19116b12.fcf025",
+            "10412741.96f149"
+        ],
+        "x": 675,
+        "y": 4380,
+        "wires": []
+    },
+    {
+        "id": "e2ab8c0d.a3166",
+        "type": "comment",
+        "z": "c5823db2.4ff16",
+        "name": "SIGNAL",
+        "info": "",
+        "x": 760,
+        "y": 4380,
+        "wires": []
+    },
+    {
+        "id": "7a132310.043ebc",
+        "type": "function",
+        "z": "c5823db2.4ff16",
+        "name": "Status",
+        "func": "msg.payload = {fill:\"green\",shape:\"ring\",text:\"Signalstärke:\" + msg.payload};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 410,
+        "y": 2080,
+        "wires": [
+            [
+                "377f601b.b5fc",
+                "cef72130.c7c29"
+            ]
+        ]
+    },
+    {
+        "id": "377f601b.b5fc",
+        "type": "link out",
+        "z": "c5823db2.4ff16",
+        "name": "STATUS",
+        "links": [
+            "4ac832ef.ec9c0c"
+        ],
+        "x": 675,
+        "y": 2080,
+        "wires": []
+    },
+    {
+        "id": "2f6aa22c.4510de",
+        "type": "function",
+        "z": "c5823db2.4ff16",
+        "name": "Status",
+        "func": "msg.payload = {fill:\"green\",shape:\"dot\",text:\"Verbunden\"};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 2120,
+        "wires": [
+            [
+                "377f601b.b5fc"
+            ]
+        ]
+    },
+    {
+        "id": "cef72130.c7c29",
+        "type": "delay",
+        "z": "c5823db2.4ff16",
+        "name": "3sec",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 410,
+        "y": 2120,
+        "wires": [
+            [
+                "2f6aa22c.4510de"
+            ]
+        ]
+    },
+    {
+        "id": "405848a2.aa8f28",
+        "type": "comment",
+        "z": "c5823db2.4ff16",
+        "name": "Alt wird über die Rückgabe gesendet",
+        "info": "",
+        "x": 640,
+        "y": 3760,
+        "wires": []
+    },
+    {
+        "id": "64377d49.4f3ef4",
+        "type": "comment",
+        "z": "c5823db2.4ff16",
+        "name": "SEND SMS  AUSWERTUNG",
+        "info": "",
+        "x": 180,
+        "y": 3240,
+        "wires": []
+    },
+    {
+        "id": "fa42b8cc.401b78",
+        "type": "change",
+        "z": "c5823db2.4ff16",
+        "name": "ENTER",
+        "rules": [
+            {
+                "t": "move",
+                "p": "payload.message",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "ENTER",
+                "pt": "msg",
+                "to": "\\n",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 260,
+        "y": 3560,
+        "wires": [
+            [
+                "f50154e7.035d58"
+            ]
+        ]
+    },
+    {
+        "id": "f50154e7.035d58",
+        "type": "function",
+        "z": "c5823db2.4ff16",
+        "name": "\"\\n\" & Send Message",
+        "func": "var meinArray = msg.payload.split(msg.ENTER);\nvar liste = \"\";\n\nfor (var i = 0; i < meinArray.length; i++) {\n        liste = liste + \"\\n\" + meinArray[i];\n}\n\nvar sms_msg = liste;\n\nmsg.payload = sms_msg + \"\\x1A\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 440,
+        "y": 3560,
+        "wires": [
+            [
+                "2b468ff.a1eba7"
+            ]
+        ]
+    },
+    {
+        "id": "2b468ff.a1eba7",
+        "type": "debug",
+        "z": "c5823db2.4ff16",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 3560,
+        "wires": []
+    },
+    {
+        "id": "f215c308.5ee17",
+        "type": "function",
+        "z": "c5823db2.4ff16",
+        "name": "\"\\n\" & Send Message",
+        "func": "var meinArray = msg.payload.split(msg.ENTER);\nvar liste = \"\";\n\nfor (var i = 0; i < meinArray.length; i++) {\n        liste = liste + \"\\n\" + meinArray[i];\n}\n\nvar sms_msg = liste;\n\nmsg.payload = sms_msg + \"\\x1A\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 920,
+        "y": 3860,
+        "wires": [
+            [
+                "2c8ab32e.58cffc"
+            ]
+        ]
+    },
+    {
+        "id": "790c98d8.ab9f68",
+        "type": "link in",
+        "z": "c5823db2.4ff16",
+        "name": "RESET",
+        "links": [
+            "ba148604.351808",
+            "a606f561.3ef308"
+        ],
+        "x": 615,
+        "y": 1700,
+        "wires": [
+            [
+                "1477dcf.1c66323"
+            ]
+        ]
+    },
+    {
+        "id": "1477dcf.1c66323",
+        "type": "change",
+        "z": "c5823db2.4ff16",
+        "name": "reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 1700,
+        "wires": [
+            [
+                "316636.26b4d9ca"
             ]
         ]
     },
@@ -8000,7 +8275,7 @@
                 "5af87e3c.08b4a"
             ],
             [
-                "6f581791.1e9528"
+                "52b6d97d.89e888"
             ],
             [
                 "d8ff3d30.176ea"
@@ -8090,7 +8365,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "{\"number\":\"0174123456789\",\"message\":\"Nodered SMS Test Text\\nvom SIM800 Modul\"}",
+        "payload": "{\"number\":\"0174123456789\",\"message\":\"Nodered\\nSMS Test Text\\nvom SIM800 Modul\"}",
         "payloadType": "json",
         "x": 240,
         "y": 340,
@@ -8214,7 +8489,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1120,
+        "x": 1000,
         "y": 240,
         "wires": []
     },
@@ -8386,20 +8661,59 @@
         "wires": []
     },
     {
-        "id": "6f581791.1e9528",
-        "type": "rbe",
+        "id": "2c25175d.c86028",
+        "type": "inject",
         "z": "3ccff976.212636",
-        "name": "",
-        "func": "rbe",
-        "gap": "",
-        "start": "",
-        "inout": "out",
-        "property": "payload",
-        "x": 970,
-        "y": 240,
+        "name": "Signal Qu.",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 260,
+        "y": 460,
         "wires": [
             [
-                "52b6d97d.89e888"
+                "4611663e.a1e318"
+            ]
+        ],
+        "icon": "node-red-dashboard/ui_switch.png"
+    },
+    {
+        "id": "4611663e.a1e318",
+        "type": "change",
+        "z": "3ccff976.212636",
+        "name": "msg.input",
+        "rules": [
+            {
+                "t": "set",
+                "p": "msg.input",
+                "pt": "msg",
+                "to": "SIGNAL",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 460,
+        "wires": [
+            [
+                "92117134.d5efb"
             ]
         ]
     },
