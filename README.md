@@ -9,6 +9,11 @@ Subflow to send and receive SMS via Serialport &amp; SIM800 Modul.
 Forum: https://homematic-forum.de/forum/viewtopic.php?f=77&t=63797&p=628671#p628671
 
 ---
+[->Subflow only<-](https://github.com/Matten-Matten/SIM800-NodeRed/blob/main/subflow.js)
+
+[->Beispiel flow<-](https://github.com/Matten-Matten/SIM800-NodeRed/blob/main/SIM800-flow.js)
+
+---
 
 ## INPUT:
 
@@ -78,7 +83,8 @@ Forum: https://homematic-forum.de/forum/viewtopic.php?f=77&t=63797&p=628671#p628
 
 ## Changelog:
 
-- V.1.1.1 - `Add SIM PIN Show Support`; `correction Provider registration check`, `Update UI`, `add multi System(Nodered/Redmatic)`
+- V.1.2.0 - `Add read Signal quality`, `correction Provider registration check loop`
+- V.1.1.1 - `Add SIM PIN Show Support`, `correction Provider registration check`, `Update UI`, `add multi System(Nodered/Redmatic)`
 
 - V.1.1.0 - `Add SMS API Input`
 
