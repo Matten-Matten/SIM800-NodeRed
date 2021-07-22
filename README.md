@@ -1,7 +1,7 @@
 # SIM800-NodeRed
 Subflow to send and receive SMS via Serialport &amp; SIM800 Modul.
 
-![Logo](https://simcom.ee/images/modules/sim800.jpg)
+![Logo](http://simcom.ee/images/simcom_logo.png)
 
 ---
 ![Logo](https://homematic-forum.de/forum/styles/prosilver/theme/images/homematic-logo.png)
